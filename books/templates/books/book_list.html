@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book List</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <div class="navbar">
+        <a href="{% url 'book_list' %}">Home</a>
+        <a href="{% url 'book_create' %}">Add Book</a>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <div class="card">
+            <h1>Book List</h1>
+            <a href="{% url 'book_create' %}">Add New Book</a>
+            <ul>
+                {% for book in books %}
+                    <li>
+                        <div>{{ book.title }} (by {{ book.author }})</div>
+                        <div>
+                            <a href="{% url 'book_detail' book.pk %}">View</a> | 
+                            <a href="{% url 'book_update' book.pk %}">Edit</a> | 
+                            <a href="{% url 'book_delete' book.pk %}">Delete</a>
+                        </div>
+                    </li>
+                {% empty %}
+                    <li>No books available.</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        &copy; 2025 Library Management System
+    </div>
+</body>
+</html>

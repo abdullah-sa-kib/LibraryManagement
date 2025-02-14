@@ -1,0 +1,139 @@
+/* Reset basic margins and set full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* 
+  Make <body> a flex container that stacks elements vertically.
+  - The navbar and footer will "shrink to fit".
+  - The .container in the middle will expand to fill leftover space.
+*/
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #007bff;
+    padding: 1rem;
+    text-align: center;
+    flex-shrink: 0;  /* Don’t let the navbar grow or shrink */
+}
+
+.navbar a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Main content container */
+.container {
+    width: 90%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+    flex: 1;  /* Make this area grow to fill space between navbar & footer */
+}
+
+/* Card layout for content blocks */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+/* Link Styles */
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button, 
+input[type="submit"] {
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Form Styles */
+form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="date"],
+form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Footer */
+.footer {
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    padding: 0.75rem 0;
+    flex-shrink: 0;  /* Keep footer at the bottom */
+}

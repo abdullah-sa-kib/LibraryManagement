@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Detail</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="{% url 'book_list' %}">Home</a>
+    <a href="{% url 'book_create' %}">Add Book</a>
+</div>
+
+<!-- Main Container -->
+<div class="container">
+    <div class="card">
+        <h1>{{ book.title }}</h1>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Published Date:</strong> {{ book.published_date }}</p>
+        <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+        <p><strong>Description:</strong> {{ book.description }}</p>
+        <br>
+        <a href="{% url 'book_list' %}">Back to Book List</a>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2025 Library Management System
+</div>
+
+</body>
+</html>

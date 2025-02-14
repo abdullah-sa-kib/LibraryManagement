@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Book</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <a href="{% url 'book_list' %}">Home</a>
+    <a href="{% url 'book_create' %}">Add Book</a>
+</div>
+
+<!-- Main Container -->
+<div class="container">
+    <div class="card">
+        <h1>Delete Book</h1>
+        <p>Are you sure you want to delete <strong>"{{ book.title }}"</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Yes, delete">
+            <a href="{% url 'book_list' %}">Cancel</a>
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    &copy; 2025 Library Management System
+</div>
+
+</body>
+</html>
