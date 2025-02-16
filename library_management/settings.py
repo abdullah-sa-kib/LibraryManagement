@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'books',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +81,12 @@ DATABASES = {
         #'NAME': BASE_DIR / 'db.sqlite3',
         'NAME': 'librarydb',         # Your new schema name
         'USER': 'libraryuser',       # The new MySQL user
+        
         'PASSWORD': 'Sakib2001!',  # The password you set for the user
+        
         'HOST': 'localhost',
+        
+        
         'PORT': '3306',
     }
 }
@@ -128,3 +133,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = 'book_list'    # Where to go after login
+LOGOUT_REDIRECT_URL = 'book_list'       # Where to go after logout
+LOGIN_URL = 'login'
